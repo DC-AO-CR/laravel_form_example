@@ -5,4 +5,4 @@
     </ul>
 </div>
 
-<a href="{{ route('student.toAll') }}">Back</a>
+<a href="{{ route('flow.toAll') }}">Back</a>

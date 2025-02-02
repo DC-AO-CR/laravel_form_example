@@ -42,7 +42,7 @@ class StudentController extends Controller {
 
         $student = Student::create($payload);
 
-        return Redirect::route('student.toAll');
+        return Redirect::route('flow.toAll');
     }
 
     /**
@@ -58,7 +58,7 @@ class StudentController extends Controller {
         $student = Student::findOrFail($id);
         $student->delete();
 
-        return Redirect::route('student.toAll');
+        return Redirect::route('flow.toAll');
     }
 
     /**
@@ -80,6 +80,6 @@ class StudentController extends Controller {
 
         $original->update($payload);
 
-        return Redirect::route('student.toAll');
+        return Redirect::route('flow.toAll');
     }
 }

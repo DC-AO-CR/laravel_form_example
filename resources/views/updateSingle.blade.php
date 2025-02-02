@@ -5,7 +5,7 @@
     </ul>
 </div>
 
-<form method="POST" action="{{ route('student.toUpdate', ['id' => $student->id]) }}">
+<form method="POST" action="{{ route('flow.toUpdate', ['id' => $student->id]) }}">
     @csrf
     @method('PUT')
 
@@ -22,4 +22,4 @@
     <button type="submit">Update</button>
 </form>
 
-<a href="{{ route('student.toAll') }}">Back</a>
+<a href="{{ route('flow.toAll') }}">Back</a>

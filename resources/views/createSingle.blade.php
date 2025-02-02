@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('students.toCreate') }}">
+<form method="POST" action="{{ route('flow.toCreate') }}">
     @csrf
 
     <div>
@@ -14,4 +14,4 @@
     <button type="submit">Create</button>
 </form>
 
-<a href="{{ route('student.toAll') }}">Back</a>
+<a href="{{ route('flow.toAll') }}">Back</a>
