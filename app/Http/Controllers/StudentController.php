@@ -7,10 +7,6 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-// QUESTION: What does each function have in common with one another?
-// QUESTION: Where do the values of the parameters of the functions come from?
-// QUESTION: What does each function return and where does it end up?
-
 class StudentController extends Controller {
 
     /**
@@ -19,7 +15,7 @@ class StudentController extends Controller {
     public function showAll() {
        $students = Student::all();
 
-       return view('overview', ['students' => $students]);
+       return view('showAll', ['students' => $students]);
     }
 
     /**
