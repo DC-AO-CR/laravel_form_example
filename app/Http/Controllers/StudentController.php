@@ -31,9 +31,7 @@ class StudentController extends Controller {
      * Show the form to create a single student.
      */
     public function giveCreateForm() {
-        $students = Student::all();
-
-        return view('overview', ['students' => $students]);
+        return view('createSingle');
     }
 
     public function createSingle(Request $request) {
