@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 // QUESTION: What does each function have in common with one another?
 // QUESTION: Where do the values of the parameters of the functions come from?
@@ -45,7 +46,7 @@ class StudentController extends Controller {
 
         $student = Student::create($payload);
 
-        return view('showSingle', ['student' => $student]);
+        return Redirect::route('student.toAll');
     }
 
     /**
@@ -61,7 +62,7 @@ class StudentController extends Controller {
         $student = Student::findOrFail($id);
         $student->delete();
 
-        return view('showSingle', ['student' => $student]);
+        return Redirect::route('student.toAll');
     }
 
     /**
@@ -83,6 +84,6 @@ class StudentController extends Controller {
 
         $original->update($payload);
 
-        return view('showSingle', ['student' => $original]);
+        return Redirect::route('student.toAll');
     }
 }

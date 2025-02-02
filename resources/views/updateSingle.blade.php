@@ -21,3 +21,5 @@
 
     <button type="submit">Update</button>
 </form>
+
+<a href="{{ route('student.toAll') }}">Back</a>

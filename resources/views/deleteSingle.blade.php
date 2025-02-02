@@ -9,3 +9,5 @@
 
     <button type="submit">Delete</button>
 </form>
+
+<a href="{{ route('student.toAll') }}">Back</a>
