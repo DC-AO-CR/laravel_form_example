@@ -20,7 +20,7 @@ class StudentController extends Controller {
     public function showSingle($id) {
         $student = Student::findOrfail($id);
 
-        return response()->json($student, 200);
+        return view('showSingle', ['student' => $student]);
     }
 
     /**
@@ -38,7 +38,7 @@ class StudentController extends Controller {
 
         $student = Student::create($payload);
 
-        return response()->json($student, 201);
+        return view('showSingle', ['student' => $student]);
     }
 
     public function deleteSingle($id) {
