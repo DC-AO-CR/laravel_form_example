@@ -8,3 +8,6 @@ Route::get('/', function () {
 });
 
 Route::get('/students', [StudentController::class, 'showAll']);
+Route::post('/students', [StudentController::class, 'createSingle'])->name('students.toCreate');
+
+Route::get('/students/create', [StudentController::class, 'showCreateForm'])->name('students.toCreateForm');

@@ -23,6 +23,13 @@ class StudentController extends Controller {
         return response()->json($student, 200);
     }
 
+    /**
+     * Show the form to create a single student.
+     */
+    public function showCreateForm() {
+        return view('createStudent');
+    }
+
     public function createSingle(Request $request) {
         $payload = [
             'firstName' => $request->input('firstName'),
