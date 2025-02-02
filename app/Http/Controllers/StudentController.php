@@ -34,8 +34,10 @@ class StudentController extends Controller {
     /**
      * Show the form to create a single student.
      */
-    public function showCreateForm() {
-        return view('createStudent');
+    public function giveCreateForm() {
+        $students = Student::all();
+
+        return view('overview', ['students' => $students]);
     }
 
     public function createSingle(Request $request) {
@@ -52,7 +54,7 @@ class StudentController extends Controller {
     /**
      * Show the form to delete a single student.
      */
-    public function showDeleteForm($id) {
+    public function giveDeleteForm($id) {
         $student = Student::findOrfail($id);
 
         return view('deleteSingle', ['student' => $student]);
@@ -68,7 +70,7 @@ class StudentController extends Controller {
     /**
      * Show the form to update a single student.
      */
-    public function showUpdateForm($id) {
+    public function giveUpdateForm($id) {
         $student = Student::findOrfail($id);
 
         return view('updateSingle', ['student' => $student]);
