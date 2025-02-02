@@ -14,7 +14,7 @@ class StudentController extends Controller {
     public function showAll() {
        $students = Student::all();
 
-       return response()->json($students, 200);
+       return view('overview', ['students' => $students]);
     }
 
     public function showSingle($id) {

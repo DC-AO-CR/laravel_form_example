@@ -10,8 +10,6 @@ use App\Http\Controllers\StudentController;
 // QUESTION: Why do we have different kinds of routes in our API?
 // QUESTION: How do we call each route of this API when we're running the webapp?
 
-Route::get('/students', [StudentController::class, 'showAll']);
-
 Route::get('/students/{id}', [StudentController::class, 'showSingle']);
 
 Route::post('/students', [StudentController::class, 'createSingle']);
