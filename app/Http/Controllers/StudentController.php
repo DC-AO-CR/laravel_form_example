@@ -11,12 +11,19 @@ use Illuminate\Http\Request;
 // QUESTION: What does each function return and where does it end up?
 
 class StudentController extends Controller {
+
+    /**
+     * Show a webpage with all the students in the database.
+     */
     public function showAll() {
        $students = Student::all();
 
        return view('overview', ['students' => $students]);
     }
 
+    /**
+     * Show a webpage with a single student with a specific id.
+     */
     public function showSingle($id) {
         $student = Student::findOrfail($id);
 
@@ -41,11 +48,20 @@ class StudentController extends Controller {
         return view('showSingle', ['student' => $student]);
     }
 
+    /**
+     * Show the form to create a delete student.
+     */
+    public function showDeleteForm($id) {
+        $student = Student::findOrfail($id);
+
+        return view('deleteSingle', ['student' => $student]);
+    }
+
     public function deleteSingle($id) {
         $student = Student::findOrFail($id);
         $student->delete();
 
-        return response()->json($student, 200);
+        return view('showSingle', ['student' => $student]);
     }
 
     public function updateSingle($id, Request $request) {

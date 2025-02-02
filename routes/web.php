@@ -11,7 +11,10 @@ Route::get('/students', [StudentController::class, 'showAll']);
 
 Route::get('/students/{id}', [StudentController::class, 'showSingle']);
 
+Route::get('/students/create', [StudentController::class, 'showCreateForm'])->name('students.toCreateForm');
+
 Route::post('/students', [StudentController::class, 'createSingle'])->name('students.toCreate');
 
+Route::get('/students/delete/{id}', [StudentController::class, 'showDeleteForm']);
 
-Route::get('/students/create', [StudentController::class, 'showCreateForm'])->name('students.toCreateForm');
+Route::delete('/students/{id}', [StudentController::class, 'deleteSingle'])->name('student.toDelete');

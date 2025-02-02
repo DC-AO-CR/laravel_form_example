@@ -10,8 +10,4 @@ use App\Http\Controllers\StudentController;
 // QUESTION: Why do we have different kinds of routes in our API?
 // QUESTION: How do we call each route of this API when we're running the webapp?
 
-Route::post('/students', [StudentController::class, 'createSingle']);
-
-Route::delete('/students/{id}', [StudentController::class, 'deleteSingle']);
-
 Route::put('/students/{id}', [StudentController::class, 'updateSingle']);
