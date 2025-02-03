@@ -1,11 +1,20 @@
 <?php
 
+// What is the flow of a web application?
+// Why is it important to have a good flow in a web application?
+// What can we tell about the flow of this app by studying the below routes?
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 
+// What will this route do if you visit its URL?
 Route::get('/', function () {
     return Redirect::route('flow.toAll');
 });
+
+// What is a named route?
+// Why are we giving names to our routes?
+// How can we refer to these routes in our controllers and our views?
 
 # Show routes
 Route::get('/students', [StudentController::class, 'showAll'])->name('flow.toAll');

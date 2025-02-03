@@ -42,6 +42,9 @@ class StudentController extends Controller {
 
         $student = Student::create($payload);
 
+        // What is a redirect?
+        // Why do we use a redirect instead of calling a different function in the controller?
+        // Where does this redirect end up at in the flow of the app?
         return Redirect::route('flow.toAll');
     }
 
@@ -58,6 +61,9 @@ class StudentController extends Controller {
         $student = Student::findOrFail($id);
         $student->delete();
 
+        // What is a redirect?
+        // Why do we use a redirect instead of calling a different function in the controller?
+        // Where does this redirect end up at in the flow of the app?
         return Redirect::route('flow.toAll');
     }
 
@@ -80,6 +86,9 @@ class StudentController extends Controller {
 
         $original->update($payload);
 
+        // What is a redirect?
+        // Why do we use a redirect instead of calling a different function in the controller?
+        // Where does this redirect end up at in the flow of the app?
         return Redirect::route('flow.toAll');
     }
 }
